@@ -28,9 +28,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 17
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build
+          cache: 'yarn'
+      - run: yarn install --immutable --immutable-cache --check-cache
+      - run: yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
